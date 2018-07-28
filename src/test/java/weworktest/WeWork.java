@@ -25,9 +25,21 @@ public class WeWork {
     @Test
     public void tesfindEl2() throws Exception {
         driver.get("https://www.wework.com/ru-RU/");
-        driver.findElement(By.xpath("//header[@id='masthead']/section/div/div/div[2]/nav/div/a/span")).click();
-        driver.findElement(By.linkText("Денвер")).click();
+        driver.findElement(By.xpath("//a[@href='/ru-RU/locations']")).click();
+        driver.findElement(By.linkText("Даллас/Форт-Уэрт")).click();
+        driver.findElement(By.name("desired_capacity")).click();
+        driver.findElement(By.name("desired_capacity")).clear();
+        driver.findElement(By.name("desired_capacity")).sendKeys("10");
+        //driver.findElement(By.xpath("//div[@id='wework']/div/div[2]/main/form/div/div/div/div/div[2]/div/div/div/div/label/span")).click();
+        driver.findElement(By.xpath("//span[@class='sc-bwzfXH uTxCW'][contains(text(),'В этом месяце')]"));
+        driver.findElement(By.xpath("//div[@id='wework']/div/div[2]/main/form/div/div/div/div/div[3]/div/div/div/div/div")).click();
+        driver.findElement(By.xpath("//div[@id='wework']/div/div[2]/main/form/div/div/div/div/div[3]/div/div/div/div/div[2]/div/div/div/div[2]/label")).click();
+        driver.findElement(By.xpath("//div[@id='wework']/div/div[2]/main/form/div/div/div/div/div[4]/div/button/span")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Снять фильтры')]")).click();
+        driver.findElement(By.xpath("//span[contains(text(),'Инвесторы')]")).click();
+
     }
+    /*
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
@@ -69,5 +81,9 @@ public class WeWork {
         } finally {
             acceptNextAlert = true;
         }
+
+
     }
+    */
+
 }
